@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/fetch-jsonp/1.1.3/fetch-jsonp.js"></script>
+    <script>
+        var com = "www.baidu.com"
+        
+        var data = {
+            inCharset: 'utf-8',
+            outCharset: 'utf-8',
+            uin: 0,
+            format: 'jsonp'
+        }
+
+        let paramsUrl = ""
+        for(var k in data) {
+            var val = data[k] !== undefined ? data[k] : ""
+            paramsUrl += "&" + k + "=" + val
+        }
+
+        let newParamsUrl = paramsUrl.substring(1)
+        
+        com += (com.indexOf('?') < 0 ? "?" : "") + newParamsUrl
+        console.log(com);
+
+
+        // 浏览器自动刷新17毫秒
+        /*  
+            设置轮播图自动播放 循环播放 播放时间间隔
+            轮播图的数据是异步获取的 父组件中的子组件是根据轮播数据渲染出来的
+            那么子组件的mounted函数触发顺序可能会出现问题
+        */ 
+
+    </script>
+</body>
+
+</html>
